@@ -1,0 +1,14 @@
+{
+  "name": "ChevronAPIDeveloperPortal",
+  "version": "0.0.0",
+  "description": "Chevron API Developer Portal : This Site helps Consumers to Explore and Identify API they are interested",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo Error: no test specified && exit 1"
+  },
+  "author": "Shijo Joseph",
+  "license": "Non",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
