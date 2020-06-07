@@ -8,228 +8,58 @@
 }
 
 body {
-  background-color: #474e5d;
+  background-color: white;
   font-family: Helvetica, sans-serif;
 }
 
-/* The actual timeline (the vertical ruler) */
-.timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* The actual timeline (the vertical ruler) */
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: white;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
-}
-
-.timelineDone {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.timelineDone::after {
-  content: '';
-  position: absolute;
-  width: 6px;
-  background-color: blue;
-  top: 15px;
-  bottom: 0;
-  left: 50%;
-  margin-left: -3px;
-}
-
-
-
-/* Container around content */
-.container {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-
-/* The circles on the timeline */
-.container::after {
-  content: '';
-  position: absolute;
-  width: 25px;
+.undeployed {
   height: 25px;
-  right: -17px;
-  background-color: white;
-  border: 4px solid white;
-  top: 15px;
+  width: 25px;
+  background-color: #bbb;
   border-radius: 50%;
-  z-index: 1;
+  display: inline-block;
 }
-
-/* Container around content */
-.containerInPro {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-
-/* The circles on the timeline */
-.containerInPro::after {
-  content: '';
-  position: absolute;
-  width: 25px;
+.deployed {
   height: 25px;
-  right: -17px;
-  background-color: yellow;
-  border: 4px solid yellow;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-/* Container around content */
-.containerError {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-
-/* The circles on the timeline */
-.containerError::after {
-  content: '';
-  position: absolute;
   width: 25px;
-  height: 25px;
-  right: -17px;
-  background-color: red;
-  border: 4px solid red;
-  top: 15px;
-  border-radius: 50%;
-  z-index: 1;
-}
-
-/* Container around content */
-.containerDone {
-  padding: 10px 40px;
-  position: relative;
-  background-color: inherit;
-  width: 50%;
-}
-
-/* The circles on the timeline */
-.containerDone::after {
-  content: '';
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  right: -17px;
   background-color: green;
-  border: 4px solid green;
-  top: 15px;
   border-radius: 50%;
-  z-index: 1;
+  display: inline-block;
+}
+.redstatus {
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border-radius: 50%;
+  display: inline-block;
 }
 
-/* Place the container to the left */
-.left {
-  left: 0;
+fieldset{
+    border-radius:8px;
+	box-shadow:0 0 10px #999;
+  width: 450px;
+  margin: 0 auto;
 }
 
-/* Place the container to the right */
-.right {
-  left: 50%;
+.fieldsetwide{
+    border-radius:8px;
+	box-shadow:0 0 10px #999;
+  width: 470px;
+  margin: 0 auto;
 }
 
-/* Add arrows to the left container (pointing right) */
-.left::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  right: 30px;
-  border: medium solid white;
-  border-width: 10px 0 10px 10px;
-  border-color: transparent transparent transparent white;
-}
 
-/* Add arrows to the right container (pointing left) */
-.right::before {
-  content: " ";
-  height: 0;
-  position: absolute;
-  top: 22px;
-  width: 0;
-  z-index: 1;
-  left: 30px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-}
-
-/* Fix the circle for containers on the right side */
-.right::after {
-  left: -16px;
-}
-
-/* The actual content */
-.content {
-  padding: 20px 30px;
-  background-color: white;
-  position: relative;
-  border-radius: 6px;
-}
-
-/* Media queries - Responsive timeline on screens less than 600px wide */
-@media screen and (max-width: 600px) {
-  /* Place the timelime to the left */
-  .timeline::after {
-  left: 31px;
-  }
-
-  /* Full-width containers */
-  .container {
-  width: 100%;
-  padding-left: 70px;
-  padding-right: 25px;
-  }
-
-  /* Make sure that all arrows are pointing leftwards */
-  .container::before {
-  left: 60px;
-  border: medium solid white;
-  border-width: 10px 10px 10px 0;
-  border-color: transparent white transparent transparent;
-  }
-
-  /* Make sure all circles are at the same spot */
-  .left::after, .right::after {
-  left: 15px;
-  }
-
-  /* Make all right containers behave like the left ones */
-  .right {
-  left: 0%;
-  }
-}
 </style>
 </head>
 <body>
-<table style="width:100%">
+						
+				
+				<table style="width:100%">
 		   		     <tr>
                        <td>
 		   		           <div style="text-align: center;font-size: 40px;color: #1569C7;font-family: SegoeUISemibold;">
-		   		           <br>
-                              <b> Dell Boomi Integration - Master Data Replication </b>
+		   		           <br>						   					
+                              <b> Dell Boomi Integration - SIT2 Deployment Status</b>
                            </div>
                 	   </td>
 
@@ -238,84 +68,1110 @@ body {
 		   		     <tr/>
 		   		     <tr/>
 		   		     <tr>
-		   		     <td>
-							   <div style="text-align: right;font-size: 25px;color: red;font-family: SegoeUISemibold;">
-								   <b>Updated on - 30/May &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
-								</div>
-                	   </td>
-
+					 
+		   		       <td>
+						   <div style="text-align: right;font-size: 20px;color: red;font-family: SegoeUISemibold;">
+							   <b>Updated date - 07/June &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+							</div>
+                	   </td>					   
 		   		     </tr>
-		   		     <tr>
+					 <tr>
+					 <td>
+						   <div style="text-align: right;font-size: 13px;color: black;font-family: SegoeUISemibold;">
+							   <b>Update frequency - Daily &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+							</div>
+                	   </td>
+		   		     </tr>
+					 
+		   		     <!-- <tr>
+						  <td>
+
+								   <a style="text-align: left;font-size: 20px;color: blue;font-family: SegoeUISemibold;" href="http://nwb-sjo10.microfocus.com:8080/index.html">Home</a>
+								   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</td> 
+		   		     </tr> -->
+<!--
+
+style="width: 400px"
+-->
+		   		     
+          </table>
+		  <br/>
+		  
+		  <table style="width:100%">
+		        <tr>
+						   <td>  
+							   <fieldset >
+								<legend><b>Milestones :</b></legend>
+								<table>
+								<!-- <tr style="color: green">
+									<th style="text-align: left;">Name</th>
+									<th style="text-align: Center;">:</th>
+									<th style="text-align: right;">Click here to View </th>
+								</tr> -->
+									<tr style="color: green">
+										<td>Non BI Deployment Start - <i>(In Progress)</i></td>
+										<td>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</td>
+										<td>08/June</td>
+									</tr>
+									
+									<tr style="color: #D0D0D0">
+										<td><b>Non BI Activation</b></td>
+										<td>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</td>
+										<td><b>15/June</b></td>
+									</tr>
+									<tr style="color: #D0D0D0">
+										<td><b>Smoke Test Start</b></td>
+										<td>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</td>
+										<td><b>15/June</b></td>
+									</tr>
+									<tr style="color: #D0D0D0">
+										<td><b>BI Deployment</b></td>
+										<td>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</td>
+										<td><b>Planning</b></td>
+									</tr>
+									<tr style="color: #D0D0D0">
+										<td><b>SIT2 Start</b></td>
+										<td>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</td>
+										<td><b>22/June</b></td>
+									</tr>
+							    </table>
+							  </fieldset>
+							  
+						   </td>
 						   <td>
-							   <div>
-								   <a style="text-align: left;font-size: 20px;color: blue;font-family: SegoeUISemibold;" href="http://myprostatus2-shstatus.apps.ca-central-1.starter.openshift-online.com/deployment.html">Deployment</a>
-								</div>
+							   <fieldset >
+								<legend><b>Risk & Issues :</b></legend>
+								<table>
+								<!-- <tr>
+									<th style="text-align: Center;">Description</th>
+									<th style="text-align: Center;"></th>
+									<th style="text-align: Center;">Status</th>
+								</tr> -->
+								<tr style="text-align: Center;">								    
+									<td><u>Description</u></td>	
+									<td></td>									
+									<td><u>Status</u></td>
+								</tr>
+								<tr style="color: #ff7f00">								    
+									<td>Control Tower Connectivity</td>	
+									<td>:</td>									
+									<td>NCS Creation In Progress</td>
+								</tr>
+								<tr>
+									<td>Workday Connectivity</td>
+									<td>:</td>
+									<td>In Progress</td>
+								</tr>
+								
+							</table>
+							  </fieldset>
 						   </td>
 		   		     </tr>
-		   		     <tr/>
-		   		     <tr/>
-		   		     <tr/>
-		   		     <tr>
-						   <table style="margin-left:auto;margin-right:auto;">
+					 
+            </table>
+			<br/>
+			
+			<table style="width:100%">
+		        <tr>
+						   <td>  
+							   <fieldset class="fieldsetwide">
+								<legend><b>PSR :</b></legend>
+								<table>
+								<!-- <tr>
+									<th style="text-align: left;">Name</th>
+									<th style="text-align: Center;">:</th>
+									<th style="text-align: right;">Click here to View </th>
+								</tr> -->
 									<tr>
-										<td style="width: 400px"> <div style="text-align: center;font-size: 20px;color: yellow;font-family: SegoeUISemibold"><b>
-										Current Status :- Waiting to run INTC 123
-										</b></div></td>
-		   		     				</tr>
-		   		     		</table>
+										<td>Included</td>
+										<td>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</td>
+										<td style="text-align: left;">417, 392, 343, 378, 391, 405, 387, 402, 221</td>
+									</tr>
+									<tr>
+										<td>Excluded</td>
+										<td>&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;</td>
+										<td>297,318,312,325,416,221</td>
+									</tr>
+									
+							    </table>
+							  </fieldset>
+							  
+						   </td>
+						   
 		   		     </tr>
-          </table>
+					 
+            </table>
+			
+			<br/>
+
+                           <div>
+								   <table style="border:1px solid;color: #1569C7;margin-left:auto;margin-right:auto;border-radius:8px;">
+		   		     				<tr style="color: #1569C7;">
+		   		     					<td style="border:1px solid;width: 400px"> <div style="text-align: center;color: #1569C7;"><b>
+		   		     					INTC
+		   		     					</b></div></td><td style="border:1px solid;width: 150px"><div style="text-align: center;"><b>
+		   		     					Activated
+										</b></div></td><td style="border:1px solid;width: 150px"><div style="text-align: center;"><b>
+		   		     					Deployed
+		   		     					</b></div></td><td style="border:1px solid;width: 150px"><div style="text-align: center;"><b>
+		   		     					Date Deployed
+		   		     					</b></div></td><td style="border:1px solid;width: 150px"><div style="text-align: center;"><b>
+		   		     					Planned Date
+		   		     					</b></div></td>
+		   		     				</tr>
+									<tr style="color: black">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;713    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;        (Day 1 - DM Activity)
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: black">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;716
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: black">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1194
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: black">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1102
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: black">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;721
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: black">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;742 
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: black">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;842
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: black">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1088
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: black">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;734
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="deployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					20/May
+		   		     					</div></td>
+		   		     				</tr>
+									
+									<tr>
+									<td>  ******************** Day 2 INTCs ******************** </td> <td style="text-align: center;">RCR-7035</td> <td style="text-align: center;"><i>In Progress</i></td><td style="text-align: center;"> </td><td style="text-align: center;">08/June </td>
+									</tr>
+									
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;422
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;513
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;719
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;730_2
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;838
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;723
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;834_2
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;836_2
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;752
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;581
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;756
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;760
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;761
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;762_2
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;841
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;525
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;755
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;733	
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;736
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;739
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;740
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;741
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;744
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;867
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1089
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;906
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1128
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;265
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;293
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;315
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;526
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;445
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;486
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;589
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>									
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;422
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1060
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1066
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1106
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1113
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;424
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;435
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;439
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;507
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;786
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;852
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;907
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;908
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;776
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;569
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1067
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1068	
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1070
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1072
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;263_2
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;556
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;820
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;835_2
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;892
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1131
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1073
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-&nbsp;&nbsp;446
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									<tr style="color: green">
+		   		     					<td style="width: 400px"> <div style="text-align: left;">
+		   		     					INTC-1064
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<i>In Progress</i>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					08/June
+		   		     					</div></td>
+		   		     				</tr>
+									
+									
+									
+                                     <!-- <tr style="color: #D0D0D0">
+		   		     					<td style="width: 400px"> <div style="text-align: left;"><b>
+		   		     					INTC-&nbsp;&nbsp;123    &nbsp;&nbsp;&nbsp;&nbsp;(RCR - 7035. Deployment - <i>In Progress</i> )
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;"><b>
+		   		     					<span class="undeployed"></span>
+										</div></td><td style="width: 150px"><div style="text-align: center;">
+		   		     					<span class="undeployed"></span>
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;"><b>
+		   		     					08/June
+		   		     					</b></div></td><td style="width: 150px"><div style="text-align: center;"><b>
+		   		     					08/June
+		   		     					</b></div></td>
+		   		     				</tr> -->
 
 
-<div class="timelineDone">
-  <div class="containerDone left">
-    <div class="content">
-      <h2>INTC 213</h2>
-      <p>Exexuted Successfully</p>
-    </div>
-  </div>
-  <div class="containerError right">
-    <div class="content">
-      <h2>INTC 555</h2>
-      <p>Errored due to Saleforce Object did not found</p>
-    </div>
-  </div>
-  <div class="containerInPro left">
-    <div class="content">
-      <h2>INTC 123</h2>
-      <p>Reday to execute, Waiting to hear from MDM</p>
-    </div>
-  </div>
 
-
-  </div>
-  <div class="timeline">
-  <div class="container right">
-    <div class="content">
-      <h2>INTC 111</h2>
-      <p>Deployment in Progress</p>
-    </div>
-  </div>
-  <div class="container left">
-    <div class="content">
-      <h2>INTC 1003</h2>
-      <p>Not required as SLD uses manual load</p>
-    </div>
-  </div>
-    <div class="container right">
-      <div class="content">
-        <h2>INTC 999</h2>
-        <p>Discussion in progress</p>
-      </div>
-    </div>
-
-  <div class="container left">
-    <div class="content">
-      <h2>INTC 1244</h2>
-      <p>In Progress</p>
-    </div>
-  </div>
-</div>
+		   		     			   </table>
+							   </div>
 
 
 </body>
