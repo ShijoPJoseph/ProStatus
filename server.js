@@ -34,7 +34,7 @@ app.post ('/Question', function (req, resp) {
 	var jsobj = JSON.stringify(os.userInfo());
 	userObj = JSON.parse(jsobj);
 	// console.log(req.body.cmtType);
-	var actUser = req.body.usrname + ' (' + userObj.username +'@' + os.hostname() + ')';
+	var actUser = req.body.usrname;
 	
 	if ( req.body.cmtType == 'question')
 	{    var substring = "?";
