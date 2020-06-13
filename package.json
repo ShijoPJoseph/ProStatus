@@ -1,5 +1,5 @@
 {
-  "name": "SIT2 Deployment Status",
+  "name": "SIT2DeploymentStatus",
   "version": "0.0.0",
   "description": "Chevron API Developer Portal : This Site helps Consumers to Explore and Identify API they are interested",
   "main": "server.js",
