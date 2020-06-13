@@ -15,7 +15,7 @@ app.get ('/', function (req, resp) {
 	
 	var actUser = userObj.username +'@' + os.hostname();
 	
-    fs.appendFileSync('Static/User.txt', actUser + "\n", function (err) {
+    fs.appendFileSync('static/User.txt', actUser + "\n", function (err) {
         if (err) throw err;
        console.log('It\'s saved!');
     });
@@ -61,7 +61,7 @@ app.post ('/Question', function (req, resp) {
 	}
 	
 	
-	fs.appendFileSync('Static/Quest.html', strTowrite + "\n", function (err) {
+	fs.appendFileSync('static/Quest.html', strTowrite + "\n", function (err) {
         if (err) throw err;
        console.log('It\'s saved!');
     });
